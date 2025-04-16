@@ -1,0 +1,29 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# VS Code settings
+.vscode/
+
+# IDE specific files
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Render-specific files
+start.sh
