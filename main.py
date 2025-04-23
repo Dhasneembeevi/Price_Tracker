@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, APIRouter, Depends, HTTPException, Request, File, Query, Form
 from fastapi.middleware.cors import CORSMiddleware
 from scraper import fetch_amazon_price, fetch_flipkart_price
 
@@ -14,7 +14,7 @@ app.add_middleware(
 )
 
 @app.post("/get-prices")
-async def get_prices(request: Request):
+async def get_prices(request: Request, product_name:str = Form(...)): 
     data = await request.json()
     product_name = data.get("product_name", "")
     amazon_price = fetch_amazon_price(product_name)
